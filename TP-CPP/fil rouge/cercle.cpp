@@ -1,75 +1,37 @@
-// Fichier cercle.cpp
+// Fichier Cercle.cpp
 
 #include <iostream>  // Inclusion d'un fichier standard
 #include "cercle.hpp" // Inclusion d'un fichier du répertoire courant
 
-int cercle::cpt =0;
+int Cercle::nbCercle =0;
 
-cercle::cercle():
-    x(0),
-    y(0),
-    l(0),
-    h(0),
-    ordre(0)
+Cercle::Cercle(Point p, COULEURS c):
+  Forme(p,c)
     {
-    std::cout << "cercle" << std::endl;
-    ++cpt;}
+    std::cout << "Cercle" << std::endl;
+    ++nbCercle;}
 
+int Cercle::getRayon() {
+    return getLargeur() / 2;
+}  
 
-cercle::cercle(int a,int b,int c,int d):
-    x(a),
-    y(b),
-    l(c),
-    h(d),
-    ordre(0)
-    {
-    std::cout << "cercle avec valeur" << std::endl;
-    ++cpt;}
-
-int cercle::getCompteur(){
-    return cpt;
+int Cercle::getCompteur(){
+    return nbCercle;
 }
 
-int cercle::getX() {
-  return x;
+void Cercle::setRayon(int r){
+
 }
 
-int cercle::getOrdre(){
+
+int Cercle::getOrdre(){
   return ordre;
 }
 
-void cercle::setOrdre(int a){
+void Cercle::setOrdre(int a){
   ordre=a;
 }
 
-void cercle::setX(int a){
-    x=a;
-}
-
-int cercle::getY() {
-  return y;
-}
-
-void cercle::setY(int a){
-    y=a;
-}
-
-int cercle::getL() {
-  return l;
-}
-
-void cercle::setL(int a){
-    l=a;
-}
-
-int cercle::getH() {
-  return h;
-}
-
-void cercle::setH(int a){
-    h=a;
-}
-
-std::string cercle::toString(){
-    return "CERCLE( " +std::to_string(x)+" "+std::to_string(y)+" "+std::to_string(l)+" "+std::to_string(h) +")";
-}
+std::string Cercle::toString(){
+    return "Cercle";
+    }

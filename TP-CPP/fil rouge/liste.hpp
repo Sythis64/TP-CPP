@@ -9,8 +9,8 @@ int const taille = 10;
 
 class liste {
 
-	cercle tcercle[taille];
-	rectangle trect[taille];
+	Cercle tCercle[taille];
+	Rectangle trect[taille];
 	int nb_c, nb_r, cpt;
 	
 
@@ -24,8 +24,8 @@ public:
 
 	/// ---------------- Function ---------------- ///
 
-	void addCercle(cercle);
-	void addRect(rectangle);
+	void addCercle(Cercle);
+	void addRect(Rectangle);
 	std::string toString();
 };
 

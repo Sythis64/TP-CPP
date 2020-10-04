@@ -3,34 +3,26 @@
 #ifndef cercle_h
 #define cercle_h
 
-class cercle {
+class Point;
+
+#include "Forme.hpp"
+
+
+class Cercle : public Forme {
    // par défaut, tout est privé dans une "class"
    
-   int x;
-   int y;
-   int l;
-   int h;
    int ordre;
 
-   static int cpt;
+   static int nbCercle;
 
  public:
-
-  cercle();
-  cercle(int a,int b,int c, int d);
-  int getX();
-  void setX(int x);
-  int getY();
-  void setY(int y);
-  int getL();
-  void setL(int l);
-  int getH();
-  void setH(int h);
+  Cercle(Point p = Point::ORIGINE, COULEURS c = COULEURS::BLEU);
   int getOrdre();
   void setOrdre(int a);
   static int getCompteur();
   std::string toString();
-
+  int getRayon();
+  void setRayon(int r);
 };
 
 

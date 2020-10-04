@@ -18,15 +18,15 @@ int liste::getCompteur()
 	return cpt;
 }
 
-void liste::addCercle(cercle c)
+void liste::addCercle(Cercle c)
 {
 	c.setOrdre(cpt);
 	cpt += 1;
-	tcercle[nb_c] = c;
+	tCercle[nb_c] = c;
 	nb_c += 1;
 }
 
-void liste::addRect(rectangle r)
+void liste::addRect(Rectangle r)
 {
 	r.setOrdre(cpt);
 	cpt += 1;
@@ -41,13 +41,13 @@ string liste::toString() {
 	str << "Liste : ";
 
 	while ((irec != nb_r) and (icer != nb_c) and (i != cpt)) {
-		if (trect[irec].getOrdre() < tcercle[icer].getOrdre()) {
+		if (trect[irec].getOrdre() < tCercle[icer].getOrdre()) {
 			str << trect[irec].toString() << " ";
 			irec += 1;
 		}
 
 		else {
-			str << tcercle[icer].toString() << " ";
+			str << tCercle[icer].toString() << " ";
 			icer += 1;
 		}
 		i += 1;
@@ -55,7 +55,7 @@ string liste::toString() {
 
 	if (irec == nb_r) 
 		for (i = icer; i < nb_c; i++) 
-			str << tcercle[icer].toString() << " ";
+			str << tCercle[icer].toString() << " ";
 		
 	else if(icer == nb_c) 
 		for (i = irec; i < nb_r; i++) 

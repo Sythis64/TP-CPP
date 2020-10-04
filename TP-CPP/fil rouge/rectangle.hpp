@@ -1,31 +1,22 @@
-// Fichier rectangle.hpp
+// Fichier Rectangle.hpp
 
-#ifndef rectangle_h
-#define rectangle_h
+#ifndef Rectangle_h
+#define Rectangle_h
 
-class rectangle {
+class Point;
+
+#include "Forme.hpp"
+
+
+class Rectangle : public Forme {
    // par défaut, tout est privé dans une "class"
    
-   int x;
-   int y;
-   int l;
-   int h;
    int ordre;
 
-   static int cpt;
+   static int nbRectangle;
 
  public:
-
-  rectangle();
-  rectangle(int a,int b,int c, int d);
-  int getX();
-  void setX(int x);
-  int getY();
-  void setY(int y);
-  int getL();
-  void setL(int l);
-  int getH();
-  void setH(int h);
+  Rectangle(Point p = Point::ORIGINE, COULEURS c = COULEURS::BLEU);
   int getOrdre();
   void setOrdre(int a);
   static int getCompteur();

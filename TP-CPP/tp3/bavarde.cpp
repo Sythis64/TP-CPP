@@ -48,26 +48,57 @@ Famille::~Famille(){
     std::cout << "Famille détruite " << std::endl;
 }
 
-Mere::Mere()
+
+int Mere::nombreMere =0;
+
+int Mere::getCompteur(){
+    return nombreMere;
+}
+
+Mere::Mere():
+    nom("noName")
 {
-    std::cout << "Ta mère est tellement grosse " << std::endl;
+    ++nombreMere;
+    std::cout << "Ta mère est tellement grosse " << getCompteur() <<std::endl;
+}
+
+Mere::Mere(std::string name):
+    nom(name)
+{
+    ++nombreMere;
+    std::cout << "Ta mère est tellement grosse " << getCompteur() <<std::endl;
 }
 
 Mere::~Mere(){
-    std::cout << "qu'elle est morte " << std::endl;
+    --nombreMere;
+    std::cout << "qu'elle est morte : RIP " << nom  <<" " << getCompteur() << std::endl;
+}
+
+std::string Mere::getNom(){
+    return nom;
+}
+
+void Mere::afficher(){
+    std::cout << "je suis una madre" << std::endl;
 }
 
 Fille::Fille():
     Mere()
 {
-    std::cout << "Ta fille est tellement fine " << std::endl;
+    std::cout << "Ta fille est tellement fine " << getCompteur() <<std::endl;
 }
 
 Fille::~Fille(){
 
-    std::cout << "qu'elle a disparu " << std::endl;
+    std::cout << "qu'elle a disparu " << getCompteur() <<std::endl;
 }
 
-void Fille::test(){
-    std::cout << heu << std::endl;
+Fille::Fille(std::string name):
+    Mere(name)
+{
+    std::cout << "Ta fille est tellement fine " << getCompteur() <<std::endl;
+}
+
+void Fille::afficher(){
+    std::cout << "je suis una hija" << std::endl;
 }

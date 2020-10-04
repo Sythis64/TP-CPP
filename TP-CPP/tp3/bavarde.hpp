@@ -44,19 +44,25 @@ class Famille {
 
 class Mere {
     
-    int heu;
+    static int nombreMere;
+    std::string nom;
 
     public:
     Mere();
+    Mere(std::string nom);
     ~Mere();
+    std::string getNom();
+    static int getCompteur();
+    void afficher();
 };
 
 class Fille : public Mere {
 
     public:
     Fille();
+    Fille(std::string nom);
     ~Fille();
-    void test();
+    void afficher();
 };
 
 #endif

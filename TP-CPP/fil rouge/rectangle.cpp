@@ -9,7 +9,8 @@ rectangle::rectangle():
     x(0),
     y(0),
     l(0),
-    h(0)
+    h(0),
+    ordre(0)
     {
     std::cout << "rectangle" << std::endl;
     ++cpt;}
@@ -19,7 +20,8 @@ rectangle::rectangle(int a,int b,int c,int d):
     x(a),
     y(b),
     l(c),
-    h(d)
+    h(d),
+    ordre(0)
     {
     std::cout << "rectangle avec valeur" << std::endl;
     ++cpt;}
@@ -30,6 +32,14 @@ int rectangle::getCompteur(){
 
 int rectangle::getX() {
   return x;
+}
+
+int rectangle::getOrdre(){
+  return ordre;
+}
+
+void rectangle::setOrdre(int a){
+  ordre=a;  
 }
 
 void rectangle::setX(int a){
@@ -61,5 +71,5 @@ void rectangle::setH(int a){
 }
 
 std::string rectangle::toString(){
-    return "RECTANGLE " +std::to_string(x)+" "+std::to_string(y)+" "+std::to_string(l)+" "+std::to_string(h);
+    return "RECTANGLE (" +std::to_string(x)+" "+std::to_string(y)+" "+std::to_string(l)+" "+std::to_string(h) +")";
 }

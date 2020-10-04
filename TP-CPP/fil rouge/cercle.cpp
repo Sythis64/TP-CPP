@@ -9,7 +9,8 @@ cercle::cercle():
     x(0),
     y(0),
     l(0),
-    h(0)
+    h(0),
+    ordre(0)
     {
     std::cout << "cercle" << std::endl;
     ++cpt;}
@@ -19,7 +20,8 @@ cercle::cercle(int a,int b,int c,int d):
     x(a),
     y(b),
     l(c),
-    h(d)
+    h(d),
+    ordre(0)
     {
     std::cout << "cercle avec valeur" << std::endl;
     ++cpt;}
@@ -30,6 +32,14 @@ int cercle::getCompteur(){
 
 int cercle::getX() {
   return x;
+}
+
+int cercle::getOrdre(){
+  return ordre;
+}
+
+void cercle::setOrdre(int a){
+  ordre=a;
 }
 
 void cercle::setX(int a){
@@ -61,5 +71,5 @@ void cercle::setH(int a){
 }
 
 std::string cercle::toString(){
-    return "CERCLE " +std::to_string(x)+" "+std::to_string(y)+" "+std::to_string(l)+" "+std::to_string(h);
+    return "CERCLE( " +std::to_string(x)+" "+std::to_string(y)+" "+std::to_string(l)+" "+std::to_string(h) +")";
 }

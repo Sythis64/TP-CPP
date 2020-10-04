@@ -10,6 +10,7 @@ class cercle {
    int y;
    int l;
    int h;
+   int ordre;
 
    static int cpt;
 
@@ -25,6 +26,8 @@ class cercle {
   void setL(int l);
   int getH();
   void setH(int h);
+  int getOrdre();
+  void setOrdre(int a);
   static int getCompteur();
   std::string toString();
 

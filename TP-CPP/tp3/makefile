@@ -1,4 +1,4 @@
-SRC=main.cpp bavarde.cpp
+SRC=main.cpp A.cpp B.cpp bavarde.cpp
 #SRC=$(wildcard *.cpp)  
 EXE=launcher
 

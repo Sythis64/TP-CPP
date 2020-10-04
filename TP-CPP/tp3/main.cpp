@@ -1,6 +1,7 @@
 #include "bavarde.hpp"
 #include <iostream>
-
+#include "A.hpp"
+#include "B.hpp"
 
 int main(int, char **) {
   
@@ -15,13 +16,20 @@ int main(int, char **) {
   // claude.afficher();
   // anna.afficher();
 
-  Mere  *pm = new Mere("mere_dyn");
-  Fille *pf = new Fille("fille_dyn");
-  Mere  *pp = new Fille("fille vue comme mere");
-  pm->afficher(); // affiche Mere
-  pf->afficher(); // affiche Fille
-  pp->afficher(); // affiche Fille
-    
+  // Mere  *pm = new Mere("mere_dyn");
+  // Fille *pf = new Fille("fille_dyn");
+  // Mere  *pp = new Fille("fille vue comme mere");
+  // pm->afficher(); // affiche Mere
+  // pf->afficher(); // affiche Fille
+  // pp->afficher(); // affiche Fille
+
+  A una;
+  B unb;
+  std::cout << unb.get() << std::endl;
+  una.send(&unb);
+  std::cout << unb.get() << std::endl;
+
+
   return 0;
   
 }

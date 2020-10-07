@@ -63,6 +63,12 @@ int Forme::getLargeur(){
 int Forme::getHauteur(){
     return h;
 }
+void Forme::setHauteur(int r){
+    h=r;
+}
+void Forme::setLargeur(int r){
+    l=r;
+}
 int Forme::getX(){
     return p.getX();
 }

@@ -68,32 +68,44 @@
 //   REQUIRE_FALSE (f2.getCouleur() == COULEURS::ROUGE);
 // }
 
-TEST_CASE("Compteur", "[Forme]") {
-   // Pour être correct, ce test doit etre le premier sur Forme
-   REQUIRE(0 == Forme::prochainId());
-   Forme f1;
-   REQUIRE(0 == f1.getId());
-   REQUIRE(1 ==  Forme::prochainId());  
-   // Verification que la valeur n'est pas decrementee accidentellement.
-   Forme *p = new Forme;
-   REQUIRE(1 == p->getId());
-   delete p;
-   REQUIRE(2 == Forme::prochainId()); 
-}
+// TEST_CASE("Compteur", "[Forme]") {
+//    // Pour être correct, ce test doit etre le premier sur Forme
+//    REQUIRE(0 == Forme::prochainId());
+//    Forme f1;
+//    REQUIRE(0 == f1.getId());
+//    REQUIRE(1 ==  Forme::prochainId());  
+//    // Verification que la valeur n'est pas decrementee accidentellement.
+//    Forme *p = new Forme;
+//    REQUIRE(1 == p->getId());
+//    delete p;
+//    REQUIRE(2 == Forme::prochainId()); 
+// }
 
-TEST_CASE("Cercle", "[Cercle]") {
-   int compteur = Forme::prochainId();
-   Cercle c1;
-   Cercle c2(); 
+// TEST_CASE("Cercle", "[Cercle]") {
+//    int compteur = Forme::prochainId();
+//    Cercle c1;
+//    Point p(2,3);
+//    Cercle c2(p,COULEURS::ROUGE); 
    
-   REQUIRE(c1.toString() == ".....");
-   REQUIRE(c2.toString() == ".....");
+//    REQUIRE(c1.toString() == "Cercle");
+//    REQUIRE(c2.toString() == "Cercle");
 
-   c2.setRayon(...);
-   REQUIRE(c2.getRayon()   == "..."  );
-   REQUIRE(c2.toString()   == ".....");
-   REQUIRE(c2.getLargeur() == ".....");
-   REQUIRE(c2.getHauteur() == ".....");  
+//    c2.setRayon(2);
+//    REQUIRE(c2.getRayon()   == 2  );  
+//    REQUIRE(c2.toString()   == "Cercle");
+//    REQUIRE(c2.getLargeur() == 4);
+//    REQUIRE(c2.getHauteur() == 4);  
 
-   REQUIRE(Forme::prochainId() == (compteur+2) ); 
+//    REQUIRE(Forme::prochainId() == (compteur+2) ); 
+// }
+
+TEST_CASE("Polymorphisme", "[Forme]") {
+   Forme * f1 = new Cercle;
+   Forme * f2 = new Rectangle;
+
+   REQUIRE(f1->toString() == "Cercle");
+   REQUIRE(f2->toString() == "Rectangle");
+
+   delete f1;
+   delete f2;
 }

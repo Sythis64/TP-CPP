@@ -20,7 +20,7 @@ class Cercle : public Forme {
   int getOrdre();
   void setOrdre(int a);
   static int getCompteur();
-  std::string toString();
+  std::string toString() override;
   int getRayon();
   void setRayon(int r);
 };

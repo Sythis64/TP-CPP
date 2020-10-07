@@ -1,6 +1,7 @@
 #ifndef FORME_H
 #define FORME_H
 
+#include <iostream> 
 #include "Point.hpp"
 
 enum class COULEURS {
@@ -20,19 +21,22 @@ class Forme {
 
     Forme();
     Forme(Point p, COULEURS couleur);
-    ~Forme();
+    virtual ~Forme();
     static int prochainId();
-    void setX(int a);
-    void setY(int b);
-    int getLargeur();
-    int getHauteur();
-    int getX();
-    int getY();
+    virtual void setX(int a);
+    virtual void setY(int b);
+    virtual int getLargeur();
+    virtual int getHauteur();
+    virtual int getX();
+    virtual int getY();
     int getCompteur();
-    int getId();
-    void setCouleur(COULEURS c);
-    COULEURS getCouleur();
-    Point & getPoint();
+    virtual int getId();
+    virtual void setCouleur(COULEURS c);
+    virtual void setHauteur(int a);
+    virtual void setLargeur(int a);
+    virtual COULEURS getCouleur();
+    virtual Point & getPoint();
+    virtual std::string toString() = 0;
 
 };
 

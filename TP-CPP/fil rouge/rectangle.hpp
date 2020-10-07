@@ -20,7 +20,7 @@ class Rectangle : public Forme {
   int getOrdre();
   void setOrdre(int a);
   static int getCompteur();
-  std::string toString();
+  std::string toString() override;
 
 };
 

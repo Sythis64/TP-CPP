@@ -7,7 +7,7 @@
 
 int const taille = 10;
 
-class liste {
+class Groupe {
 
 	Cercle tCercle[taille];
 	Rectangle trect[taille];
@@ -17,7 +17,7 @@ class liste {
 
 public:
 
-	liste();
+	Groupe();
 
 	/// ---------------- GET/SET ---------------- ///
 	int getCompteur();

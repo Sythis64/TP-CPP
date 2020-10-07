@@ -27,5 +27,5 @@ void Rectangle::setOrdre(int a){
 }
 
 std::string Rectangle::toString(){
-  return "bfdbgnwdgjnrigqewgr<";
+  return "Rectangle";
 }

@@ -20,7 +20,8 @@ int Cercle::getCompteur(){
 }
 
 void Cercle::setRayon(int r){
-
+    setLargeur(2*r);
+    setHauteur(2*r);
 }
 
 
